@@ -1,0 +1,99 @@
+TutorialNinja - Add to Cart Automation
+Objective
+This project automates the 'Add to Cart' functionality on the TutorialNinja demo application using Cypress. It implements a Page Object Model (POM) framework and includes waits, assertions, and screenshots to validate the steps.
+
+Tools & Technologies
+Programming Language: JavaScript
+Tool: Cypress
+IDE/Text Editor: Visual Studio Code (VSCode)
+Browser: Chrome or Electron (default)
+Prerequisites
+Before starting, ensure you have:
+
+Basic understanding of JavaScript
+Knowledge of HTML elements (like id, class, name, etc.)
+Node.js and NPM installed
+Environment Setup
+Install VSCode on your system.
+Open VSCode and create a new folder for the project.
+Open the terminal and initialize Node.js:
+bash
+Copy code
+npm init -y
+Install Cypress:
+bash
+Copy code
+npm install cypress --save-dev
+Project Structure
+bash
+Copy code
+├── cypress
+│   ├── integration
+│   │   └── addToCart.spec.js      # Cypress test script
+│   ├── pages
+│   │   └── homePage.js            # Page object for home page
+│   │   └── productPage.js         # Page object for product page
+│   └── fixtures
+│       └── config.json            # Property file for URLs and test data
+├── cypress.json                   # Cypress configuration file
+└── README.md                      # Project documentation
+Test Scenario
+Open the TutorialNinja Demo.
+Login or register manually (ensure credentials are valid for automation).
+Search for a product.
+Add the product to the shopping cart.
+Verify the success message and navigate to the shopping cart.
+Steps to Execute Test
+Clone the repository:
+bash
+Copy code
+git clone <repository-url>
+Navigate to the project folder and open in VSCode:
+bash
+Copy code
+cd tutorialsninja-add-to-cart
+Run Cypress Test:
+bash
+Copy code
+npx cypress open
+Select the test addToCart.spec.js from the Cypress GUI to execute.
+Framework Details
+Page Object Model (POM): The project uses POM for managing UI elements. Each page's elements are defined in separate files (e.g., homePage.js and productPage.js).
+Assertions: Implemented Cypress assertions to verify the presence of elements, success messages, and cart updates.
+Waits: Utilized waits to handle asynchronous events, ensuring proper synchronization.
+Screenshots: Captured screenshots of the cart page upon successful addition.
+Code Structure
+HomePage.js
+javascript
+Copy code
+class HomePage {
+    visit() {
+        cy.visit(Cypress.env('url'))
+    }
+
+    searchProduct(productName) {
+        cy.get('input[name="search"]').type(productName)
+        cy.get('button[type="button"]').click()
+    }
+}
+export default HomePage;
+addToCart.spec.js
+javascript
+Copy code
+import HomePage from '../pages/homePage';
+const homePage = new HomePage();
+
+describe('Add to Cart Test', () => {
+    it('should search and add a product to the cart', () => {
+        homePage.visit();
+        homePage.searchProduct('Samsung');
+        // Further steps to add product and validate success
+    });
+});
+Submission
+Push the project to GitHub with meaningful commit messages.
+Submit the repository link via the LMS.
+Evaluation Criteria
+Correctness: The script should successfully add products to the cart and validate success messages.
+Code Quality: Focus on code readability, error handling, and modular functions.
+Documentation: Comments and explanations should be included within the code for clarity.
