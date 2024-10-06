@@ -1,0 +1,69 @@
+Java Program: Balanced Parentheses Checker & Transport Class Hierarchy
+Overview
+This repository contains two Java programs:
+
+Balanced Parentheses Checker: A program to check if a given mathematical expression has balanced parentheses using a stack data structure.
+Transport Class Hierarchy and Polymorphism: A demonstration of polymorphism through a class hierarchy involving different types of transport.
+Question 1: Balanced Parentheses Checker
+Problem Description
+This program prompts the user to input an expression and checks if the parentheses in the expression are balanced. It uses a stack to track the opening and closing parentheses.
+
+Features:
+User input for the mathematical expression.
+Checks for balanced parentheses (including (), {}, []).
+Displays a message indicating whether the parentheses are balanced.
+Sample Input and Output
+Input:
+
+mathematica
+Copy code
+Enter an expression: (2+3)*(5-1)
+Output:
+
+r
+Copy code
+The expression has balanced parentheses.
+Input:
+
+mathematica
+Copy code
+Enter an expression: (2+3]*(5-1)
+Output:
+
+r
+Copy code
+The expression does not have balanced parentheses.
+Usage Instructions:
+Compile and run the program.
+Enter a mathematical expression when prompted.
+The program will display whether the parentheses in the expression are balanced.
+Question 2: Transport Class Hierarchy and Polymorphism
+Problem Description
+This program demonstrates the concept of polymorphism using a class hierarchy of transport types. The base class Transport has an abstract method move(), which is overridden by three subclasses: Car, Bicycle, and Airplane.
+
+Features:
+Abstract base class Transport with an abstract method move().
+Concrete subclasses Car, Bicycle, and Airplane that override move() to describe their movement.
+Demonstration of polymorphism by calling the move() method on different transport types stored in a list.
+Sample Output:
+csharp
+Copy code
+The car is driving.
+The bicycle is pedaling.
+The airplane is flying.
+Usage Instructions:
+Compile and run the program.
+The program will display the movement of various transport types using polymorphism.
+Submission Details
+Both tasks are implemented in Java.
+Ensure you test the code with different inputs to verify correctness.
+Screenshots of the program output are included.
+How to Run the Programs:
+Download or clone the repository.
+Compile and run the Java programs using the following commands:
+Copy code
+javac BalancedParenthesesChecker.java
+java BalancedParenthesesChecker
+Copy code
+javac TransportHierarchy.java
+java TransportHierarchy
